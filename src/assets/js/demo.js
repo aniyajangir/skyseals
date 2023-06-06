@@ -9,7 +9,7 @@ alternateStylesheet.setAttribute("id", "new-stylesheet");
 alternateStylesheet.setAttribute("rel", "stylesheet");
 stylesheet.parentNode.insertBefore(alternateStylesheet, stylesheet.nextSibling);
 
-// Style Switcher [stylesheet color]
+// Style Switcher
 var styleSwitcher = document.getElementById("colour");
 styleSwitcher.addEventListener("change", function () {
     var alternateColor = styleSwitcher.value;
@@ -17,26 +17,7 @@ styleSwitcher.addEventListener("change", function () {
     Cookies.set("switcherColor", alternateColor, { expires: 365, path: "/" });
 });
 
-var alternateStylesheetCookie = Cookies.get("switcherColor");
-if (alternateStylesheetCookie) {
-    alternateStylesheet.setAttribute("href", alternateStylesheetCookie);
+var theCookie = Cookies.get("switcherColor");
+if (theCookie) {
+    alternateStylesheet.setAttribute("href", theCookie);
 }
-
-// Asigning Alternative themelayout
-var styleThemeLayout = document.getElementById("layout");
-var pageHolder = document.getElementById("all");
-
-styleThemeLayout.addEventListener("change", function () {
-    var themeLayout = this.value;
-    pageHolder.classList = themeLayout;
-    document.body.classList = themeLayout;
-    Cookies.set("layoutStyle", themeLayout, { expires: 365, path: "/" });
-});
-
-window.onload = function () {
-    layoutStyleCookie = Cookies.get("layoutStyle");
-    if (layoutStyleCookie) {
-        pageHolder.classList = layoutStyleCookie;
-        document.body.classList = layoutStyleCookie;
-    }
-};
