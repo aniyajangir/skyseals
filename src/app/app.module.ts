@@ -11,6 +11,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { AboutComponent } from './components/about/about.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { ServicesComponent } from './components/services/services.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     ProductsComponent,
     SliderComponent,
     AboutComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
